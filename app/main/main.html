@@ -1,0 +1,56 @@
+<div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+
+        <div class="form-group">
+            <label class="control-label" for="inputDefault">Status: </label>
+            <input ng-model="newStatus" ng-keypress="sendStatus($event)"
+                  class="form-control" id="inputDefault" type="text" placeholder="please enter your today's feeling...then press 'enter'">
+        </div>
+
+    <!--
+        <input class="form-control" id="inputDefault" type="text">
+        <textarea ng-model="newStatus" ng-keypress="sendStatus($event)"
+                  class="form-control" placeholder="please enter your today's feeling...then press 'enter'">
+        </textarea>
+    -->
+    </div>
+
+    <div class="row ">
+        <table class="table table-striped table-hover status-section">
+            <thead>
+                <tr>
+                    <a ng-click="setNewStatus()" ng-if="incomingStatus.length > 0">
+                        there are {{difference}} more status
+                    </a>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="status in allStatus">
+                    <td>
+                        <image ng-src="{{status.userImage}}" class="img-responsive"></image>
+                    </td>
+                    <td>
+                        <p>
+                            {{status.user}}
+                            <br>
+                            <h6>{{status.bio}}</h6>
+                        </p>
+                    </td>
+
+                    <td>
+                        <p>
+                        {{status.date | date: 'MM/dd/yyyy hh:mm'}}
+                        </p>
+                    </td>
+                    <td>
+                        <p>{{status.content}}</p>
+                    </td>
+                    <td>
+                        <button href="#" class="btn btn-danger btn-sm">remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
