@@ -3,9 +3,15 @@
 <div class="container">
     <ul class="nav nav-pills">
         <li class="active" ng-repeat="others in users" ng-show="user._id !== others._id && others.username !== undefined">
-            <!--<image ng-src="{{others.image}}" class="img-responsive"></image>-->
-            <a ng-click="follow(user._id, others._id)" ng-hide="checkIsFollowing(others._id)"> {{others.username}} <button class="badge">follow</button></a>
-            <a ng-click="unfollow(user._id, others._id)" ng-show="checkIsFollowing(others._id)"> {{others.username}} <button class="badge">unfollow</button></a>
+            <!--
+            <image ng-src="{{others.image}}" class="img-responsive"></image>
+            -->
+            <a ng-click="follow(user._id, others._id)" ng-hide="checkIsFollowing(others._id)"> {{others.username}}
+                <button class="badge">follow</button>
+            </a>
+            <a ng-click="unfollow(user._id, others._id)" ng-show="checkIsFollowing(others._id)"> {{others.username}}
+                <button class="badge">unfollow</button>
+            </a>
         </li>
     </ul>
 </div>

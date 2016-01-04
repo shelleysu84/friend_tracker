@@ -1,5 +1,5 @@
 /**
- * Created by shell_000 on 12/20/2015.
+ * Created by shelley_su on 12/20/2015.
  */
 (function(){
     angular.module('friend_tracker')

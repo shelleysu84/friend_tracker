@@ -1,5 +1,5 @@
 /**
- * Created by shell_000 on 12/18/2015.
+ * Created by shelley_su on 12/18/2015.
  */
 
 var express = require('express');
@@ -31,12 +31,13 @@ app.post('/api/user/login', authenticationController.login);
 app.post('/api/profile/editPhoto', multipartMiddleware, profileController.updatePhoto);
 app.post('/api/profile/updateUsername', profileController.updateUsername);
 app.post('/api/profile/updateBio', profileController.updateBio);
-
+//Status
 app.post('/api/status/post', statusController.postStatus);
 app.post('/api/status/get', statusController.getStatus);
-
+//users and friends
 app.get('/api/users/get', usersController.getUsers);
 app.post('/api/users/follow', usersController.followUser);
+app.post('/api/users/unfollow',usersController.unfollowUser);
 
 app.listen('3000', function(){
    console.log('this is running~');
